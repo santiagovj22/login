@@ -9,9 +9,9 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: false}));
 
-//const Users = require('./routes/Users');
+const Users = require('./routes/User');
 
-//app.use('/users', Users);
+app.use('/users', Users);
 
 app.listen(port, () => {
     console.log(`Server on port:`, port);
