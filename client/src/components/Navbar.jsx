@@ -18,8 +18,6 @@ class Navbar extends Component {
                         <li className = "nav-item">
                             <Link to = "/register" className = "nav-link">Register</Link>
                         </li>
-
-
                     </ul>
                 )
                 const userLink = (
@@ -37,12 +35,25 @@ class Navbar extends Component {
                 )
                 return(
                     <nav className="navbar navbar-expand-lg-navbar-dark bg-dark rounded">
-                        <button className="navbar-toggler" type = "button">
-
+                        <button className="navbar-toggler" type = "button" type = "button" data-toggle = "collapse" data-tardet="#navbar1"
+                        aria-constrols = "navbar1" aria-expanded = "false" aria label = "Toggle navigaton">
+                            <span className="navbar-toggle-icon"></span>
                         </button>
+                        <div className="collapse navbar-collapse justify-content-md-center" id="navbar1">
+                            <ul className ="navbar-nav">
+                                <li className= "nav item">
+                                    <Link to ="/" className="nav-lino">
+                                        Home
+                                    </Link>
+
+                                </li>
+                            </ul>   
+                            {localStorage.usertoken ? userLink : loginRegLink}
+                         </div>
                     </nav>
+                    
                 )
             }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
