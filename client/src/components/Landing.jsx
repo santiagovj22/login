@@ -9,7 +9,6 @@ class Landing extends Component {
                         <h1 className = "text-center">WELCOME</h1>
                     </div>
                 </div>
-
             </div>
         )
     }
