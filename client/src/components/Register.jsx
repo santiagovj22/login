@@ -17,6 +17,12 @@ class Register extends Component {
     }
     onChange(e) {
         this.setState({ [e.target.name]: e.target.value })
+        // if(e.target.value.trim() == "") {
+        //     alert("Debe ingresar un valor en el campo");
+        // } else {
+        //     alert("Ingreso", e.target.value.trim(), "es correcto");
+        //}
+            
     } 
 
     onSubmit(e) {
@@ -28,11 +34,11 @@ class Register extends Component {
             email : this.state.email,
             password : this.state.password
         }
-
+        
         register(user).then(res => {
-            if(res) {
-                this.props.history.push('/login')
-            }
+            
+            this.props.history.push(`/login`)
+           
         })
     }
 
@@ -41,18 +47,18 @@ class Register extends Component {
             <div className = "container">
                 <div className = "row">
                     <div className = "col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className = "h3 mb-3 font-weight-normal"></h1>
+                        <form  onSubmit={this.onSubmit}>
+                            <h1 className = "h3 mb-3 font-weight-normal">Please sign up</h1>
                             <div className = "form-group">
                                 <label htmlFor = "first_name"> First Name</label>
-                                <input type = "text" className = "form-control" name = "first_name" placeholder = "Enter First Name"
+                                <input type = "text" className = "form-control" name = "first_name"  placeholder = "Enter First Name"
                                 value = {this.state.first_name}
                                 onChange={this.onChange} required></input>
 
                             </div>
                             <div className = "form-group">
                                 <label htmlFor = "last_name">Last Name</label>
-                                <input type = "text" className = "form-control" name = "last_name" placeholder = "Enter Last Name"
+                                <input type = "text" className = "form-control" name = "last_name"  placeholder = "Enter Last Name"
                                 value = {this.state.last_name}
                                 onChange={this.onChange} required></input>
 
@@ -66,7 +72,7 @@ class Register extends Component {
                             </div>
                             <div className = "form-group">
                                 <label htmlFor = "password">Password</label>
-                                <input type = "password" className = "form-control" name = "password" placeholder = "Enter Password"
+                                <input type = "password" className = "form-control" name = "password"  placeholder = "Enter Password"
                                 value = {this.state.password}
                                 onChange={this.onChange} required></input>
 

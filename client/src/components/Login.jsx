@@ -24,7 +24,7 @@ class Login extends Component {
         }
         login(user).then(res => {
             if(res) {
-                this.props.history.push('/profile')
+                this.props.history.push(`/profile`)
             }
         })
     }
@@ -34,8 +34,8 @@ class Login extends Component {
             <div className = "container">
                 <div className = "row">
                     <div className = "col-md-6 mt-5 mx-auto">
-                        <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className ="h3 mb-3 font-weight-normal"></h1>
+                        <form onSubmit={this.onSubmit}>
+                            <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1>
                             <div className = "form-group">
                                 <label htmlFor = "email"> Email Address</label>
                                 <input type = "email" className = "form-control" name = "email" placeholder = "Enter Email"
@@ -53,11 +53,8 @@ class Login extends Component {
                             <button type = "submit"
                             className = "btn btn-lg btn-primary btn-block">Sign in</button>
                         </form>
-
                     </div>
-
                 </div>
-
             </div>
         )
     }
